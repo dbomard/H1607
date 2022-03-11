@@ -12,14 +12,19 @@ function update_moyenne() {
     var $duree = document.querySelector("#duree-moyenne").value;
     var $annee = new Array($duree);
     for (var i = 0; i < $duree; i++) {
-        var $jours_feries = 13 - $feries_dimanche - $feries_lundi;
-        var $jours_travailles = $nb_jours_annee - $nombre_dimanches - $nombre_lundis - 25 - $jours_feries + ($solidarite ? 1 : 0);
-        $annee[i] = $jours_travailles
+    // Todo
     }
 }
 
 function solidarite() {
     $solidarite = !$solidarite;
+    $elt = document.querySelectorAll(".ajout-solidarite");
+    for (var i = 0; i < $elt.length; i++) {
+        if ($elt[i].style.display == "inline")
+            $elt[i].style.display = "none";
+        else
+            $elt[i].style.display = "inline";
+    }
     update_affichage();
 }
 

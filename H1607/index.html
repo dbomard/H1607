@@ -24,8 +24,9 @@
                 <p>Pour l'année <span id="annee-affichee"></span>, il y a <span class="nombre-jours-annee"></span>
                     jours.
                 </p>
-                <input type="checkbox" id="solidarite-mardi-samedi" onclick="solidarite()"/>
-                <label for="solidarite-mardi-samedi"> Prendre en compte les 7 heures de la journée de solidarité.</label>    
+                <input type="checkbox" id="solidarite-mardi-samedi" onclick="solidarite()" />
+                <label for="solidarite-mardi-samedi"> Prendre en compte les 7 heures de la journée de
+                    solidarité.</label>
             </article>
             <article>
                 <h3>Jours fériés :</h3>
@@ -53,6 +54,7 @@
             <p>- <span class="nombre-lundis"></span> lundis</p>
             <p>- <span id="feries-dimanche-lundi"></span> jours fériés qui tombent des jours travaillés</p>
             <p>- 25 jours de congés payés</p>
+            <p class="ajout-solidarite" hidden>+ 1 jour de solidarité</p>
             <p>= <span id="jours-travailles-dimanche-lundi"></span> jours travaillés dans l'année</p>
             <p>soit <span id="heures-dimanche-lundi"></span> heures</p>
         </section>
@@ -63,12 +65,14 @@
             <p>- <span class="nombre-dimanches"></span> dimanches</p>
             <p>- <span id="feries-samedi-dimanche"></span> jours fériés qui tombent des jours travaillés</p>
             <p>- 25 jours de congés payés</p>
+            <p class="ajout-solidarite" hidden>+ 1 jour de solidarité</p>
             <p>= <span id="jours-travailles-samedi-dimanche"></span> jours travaillés dans l'année</p>
             <p>soit <span id="heures-samedi-dimache"></span> heures</p>
         </section>
         <section>
             <h2>Moyenne :</h2>
-            <p>Moyenne pour <input type="number" min="1" value="10" id="duree-moyenne" onchange="update_moyenne()" /> années : </p>
+            <p>Moyenne pour <input type="number" min="1" value="10" id="duree-moyenne" onchange="update_moyenne()" />
+                années : </p>
         </section>
     </main>
     <footer>
