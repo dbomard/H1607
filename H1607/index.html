@@ -10,39 +10,70 @@
 </head>
 
 <body>
-    <h1>Heures travaillées</h1>
-    <section id="annee">
-        <article id="selection-annee">
-            <label for="year">année : </label>
-            <input type="number" min="1970" step="1" id="year" onchange="changer_annee(this)" />
-        </article>
-        <article id="informations-annee">
-            <h3>Détails de l'année :</h3>
-            <p>Pour l'année <span id="annee-affichee"></span>, il y a <span id="nombre-jours-annee"></span> jours.</p>
-        </article>
-        <article id="jours-feries">
-            <h3>Jours fériés :</h3>
-            <p>Jour de l'an : <span id="jour-an"></span></p>
-            <p>Pâques : <span id="paques"></span></p>
-            <p>Lundi de Pâques : <span id="lundi-paques"></span></p>
-            <p>Fête du travail : <span id="fete-travail"></span></p>
-            <p>Victoire 1945 : <span id="victoire1945"></span></p>
-            <p>Ascension : <span id="ascension"></span></p>
-            <p>Pentecôte : <span id="pentecote"></span></p>
-            <p>Lundi de Pencôte : <span id="lundi-pentecote"></span></p>
-            <p>Fête Nationale : <span id="fete-nationale"></span></p>
-            <p>Assomption : <span id="assomption"></span></p>
-            <p>Toussaint : <span id="toussaint"></span></p>
-            <p>Armistice : <span id="armistice"></span></p>
-            <p>Noël : <span id="noel"></span></p>
-        </article>
-    </section>
-    <section class="type-semaine">
-        <h2>Rythme hebdomadaire du mardi au samedi</h2>
-    </section>
-    <section class="type-semaine">
-        <h2>Rythme hebdomadaire du lundi au vendredi</h2>
-    </section>
+    <header>
+        <h1>Heures travaillées</h1>
+    </header>
+    <main class="container">
+        <section id="annee">
+            <article id="selection-annee">
+                <label for="year">année : </label>
+                <input type="number" min="1970" step="1" id="year" onchange="changer_annee(this)" />
+            </article>
+            <article id="informations-annee">
+                <h3>Détails de l'année :</h3>
+                <p>Pour l'année <span id="annee-affichee"></span>, il y a <span class="nombre-jours-annee"></span>
+                    jours.
+                </p>
+                <input type="checkbox" id="solidarite-mardi-samedi" onclick="solidarite()"/>
+                <label for="solidarite-mardi-samedi"> Prendre en compte les 7 heures de la journée de solidarité.</label>    
+            </article>
+            <article>
+                <h3>Jours fériés :</h3>
+                <div id="jours-feries">
+                    <p>Jour de l'an : <span id="jour-an"></span></p>
+                    <p>Pâques : <span id="paques"></span></p>
+                    <p>Lundi de Pâques : <span id="lundi-paques"></span></p>
+                    <p>Fête du travail : <span id="fete-travail"></span></p>
+                    <p>Victoire 1945 : <span id="victoire1945"></span></p>
+                    <p>Ascension : <span id="ascension"></span></p>
+                    <p>Pentecôte : <span id="pentecote"></span></p>
+                    <p>Lundi de Pencôte : <span id="lundi-pentecote"></span></p>
+                    <p>Fête Nationale : <span id="fete-nationale"></span></p>
+                    <p>Assomption : <span id="assomption"></span></p>
+                    <p>Toussaint : <span id="toussaint"></span></p>
+                    <p>Armistice : <span id="armistice"></span></p>
+                    <p>Noël : <span id="noel"></span></p>
+                </div>
+            </article>
+        </section>
+        <section class="type-semaine" id="option1">
+            <h2>Rythme hebdomadaire du mardi au samedi</h2>
+            <p><span class="nombre-jours-annee"></span> jours dans l'année</p>
+            <p>- <span class="nombre-dimanches"></span> dimanches</p>
+            <p>- <span class="nombre-lundis"></span> lundis</p>
+            <p>- <span id="feries-dimanche-lundi"></span> jours fériés qui tombent des jours travaillés</p>
+            <p>- 25 jours de congés payés</p>
+            <p>= <span id="jours-travailles-dimanche-lundi"></span> jours travaillés dans l'année</p>
+            <p>soit <span id="heures-dimanche-lundi"></span> heures</p>
+        </section>
+        <section class="type-semaine" id="option2">
+            <h2>Rythme hebdomadaire du lundi au vendredi</h2>
+            <p><span class="nombre-jours-annee"></span> jours dans l'année</p>
+            <p>- <span class="nombre-samedis"></span> samedis</p>
+            <p>- <span class="nombre-dimanches"></span> dimanches</p>
+            <p>- <span id="feries-samedi-dimanche"></span> jours fériés qui tombent des jours travaillés</p>
+            <p>- 25 jours de congés payés</p>
+            <p>= <span id="jours-travailles-samedi-dimanche"></span> jours travaillés dans l'année</p>
+            <p>soit <span id="heures-samedi-dimache"></span> heures</p>
+        </section>
+        <section>
+            <h2>Moyenne :</h2>
+            <p>Moyenne pour <input type="number" min="1" value="10" id="duree-moyenne" onchange="update_moyenne()" /> années : </p>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 <script src="./js/script.js" type="text/javascript" defer></script>
 

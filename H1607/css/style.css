@@ -2,3 +2,33 @@
 #year {
     width: 4em;
 }
+#duree-moyenne{
+    width: 3em;
+}
+
+
+/* Grid layout */
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "annee annee"
+                         "option1 option2";
+}
+
+#annee{
+    grid-area: annee;
+}
+
+#option1{
+    grid-area: option1;
+}
+
+#option2{grid-area: option2;}
+
+#jours-feries{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    align-items: center;
+}
