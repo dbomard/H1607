@@ -81,7 +81,7 @@ function calcule_jours_feries($year) {
     test_ferie($feries.fete_nationale);
     $feries.assomption = new Date($year, "07", "15");
     test_ferie($feries.assomption);
-    $feries.toussaint = new Date($year, "10", "10");
+    $feries.toussaint = new Date($year, "10", "1");
     test_ferie($feries.toussaint);
     $feries.armistice = new Date($year, "10", "11");
     test_ferie($feries.armistice);
